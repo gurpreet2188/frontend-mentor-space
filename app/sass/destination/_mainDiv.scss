@@ -1,0 +1,132 @@
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // gap: 1rem;
+    color: $white;
+    align-items: center;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+
+    &-header {
+        order: 1;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: .16875rem;
+        font-size: $font-subheading-m;
+        line-height: 1.1875rem;
+        color: $white;
+        margin-bottom: 2rem;
+    }
+
+    &-image {
+        order: 2;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 10.625rem;
+        height: 10.625rem;
+        margin-bottom: 1.625rem;
+    }
+
+    &-names {
+        order:3;
+        display: flex;
+        flex-direction: row;
+        gap: 1.625rem;
+        margin: 0;
+        margin-bottom: 2rem;
+        
+
+        a {
+            text-decoration: none;
+            color: $white;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.875rem;
+            letter-spacing: 0.14765rem;
+            text-transform: uppercase;
+            // opacity: .67;
+        }
+
+    }
+
+    &-title {
+        margin: 0;
+        order: 4;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 3.5rem;
+        line-height: 4rem;
+        text-transform: uppercase;
+        margin-bottom: .2rem;
+    }
+
+    &-body {
+        margin: 0;
+        order: 5;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
+        color: $blueish;
+        letter-spacing: .09rem;
+        margin-bottom: 2rem;
+    }
+
+    &-divider {
+        order: 6;
+        height: 1px;
+        width: 100%;
+        background-color: #383B4B;
+        margin-bottom: 2rem;
+    }
+
+    &-avg {
+        margin: 0;
+        order: 7;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.875rem;
+        letter-spacing: 0.147656rem;
+        color: $blueish;
+        margin-bottom: 0.75rem;
+    }
+
+    &-km {
+        margin: 0;
+        order: 8;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-subheading-l;
+        text-transform: uppercase;
+        // letter-spacing: 0.147656rem;
+        color: $blueish;
+        margin-bottom: 2rem;
+    }
+
+    &-est {
+        margin: 0;
+        order: 9;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.147656rem;
+        color: $blueish;
+        margin-bottom: 0.75rem;
+    }
+
+    &-time {
+        margin: 0;
+        order: 10;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-subheading-l;
+        text-transform: uppercase;
+        // letter-spacing: 0.147656rem;
+        color: $blueish;
+    }
+}

@@ -11,18 +11,16 @@
     left: 7.5625rem;
     top: 0;
     transition: all 300ms ease-in-out;
-   
     visibility: hidden;
 
     &-close {
         position: absolute;
-        background-image: url('../../assets/shared/icon-close.svg');
+        background-image: url('../assets/shared/icon-close.svg');
         background-repeat: no-repeat;
         width: 1.5rem;
         height: 1.3125rem;
         left: 11rem;
         top: 2.121875rem;
-        
     }
 
     a {
