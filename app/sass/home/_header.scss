@@ -1,0 +1,28 @@
+.navbar{
+    position: relative;
+    margin: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    
+    &-logo {
+        flex: 10;
+        order: 1;
+       background: url('../assets/shared/logo.svg');
+       background-repeat: no-repeat;
+       background-size: contain;
+       width: 2.5rem;
+       height: 2.5rem;
+    }
+
+    &-menu {
+        flex: 1;
+        order: 2;
+        background: url('../assets/shared/icon-hamburger.svg');
+        background-repeat: no-repeat;
+        margin-left: auto;
+        margin-top: .6rem;
+        width: 1.5rem;
+        height: 1.3125rem;
+    }
+}

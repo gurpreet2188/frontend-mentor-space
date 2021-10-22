@@ -1,0 +1,61 @@
+.intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: $white;
+    align-items: center;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    margin: 2.91rem 1.5rem 1.5rem 1.5rem;
+
+    &-text-top {
+        
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: .16875rem;
+        font-size: $font-subheading-m;
+        line-height: 1.1875rem;
+    }
+    &-text-title {
+       
+        margin: 0;
+        font-size: 5rem;
+        line-height: 6.25rem;
+        font-weight: normal;
+        font-style: normal;
+        
+    }
+    &-text-body {
+       
+        margin: 0;
+        letter-spacing: .08rem;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
+        color: $blueish;
+    }
+
+    &-circle {
+        margin-top: 4rem;
+        gap: 3rem;
+        width: 9.375rem;
+        height: 9.375rem;
+        background-color: $white;
+        border-radius: 50%;
+        left: 100px;
+        text-decoration: none;
+        
+        &-text {
+            position: absolute;
+            left: 19.67%;
+            right: 18.33%;
+            margin-top: 4rem;
+            font-size: 1.25rem;
+            letter-spacing: 0.075125rem;
+            font-style: normal;
+            font-weight: normal;
+            color: $blackish;
+        }
+    }
+}
