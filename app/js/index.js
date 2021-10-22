@@ -56,7 +56,7 @@ function loadData(type,image,title,body,km,time,i) {
     .then(data => {
        switch(type) {
            case 'dest':
-               image.style.backgroundImage = `url('.${data.destinations[i].images.webp}')`
+               image.style.backgroundImage = `url('${data.destinations[i].images.webp}')`
                let tText = aText(`${data.destinations[i].name}`)
                title.appendChild(tText)
                let bText = aText(`${data.destinations[i].description}`)
