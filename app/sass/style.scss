@@ -2,6 +2,6 @@
 @import "mixins";
 
 @import "main";
-@import "header";
-@import "intro";
-@import "explore";
+@import "./home/header";
+@import "./home/intro";
+@import "navpanel";

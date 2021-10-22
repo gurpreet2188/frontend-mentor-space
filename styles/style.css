@@ -50,6 +50,7 @@ h5, p {
       -ms-flex-order: 2;
           order: 2;
   background: url("../assets/shared/icon-hamburger.svg");
+  background-size: contain;
   background-repeat: no-repeat;
   margin-left: auto;
   margin-top: .6rem;
@@ -122,4 +123,53 @@ h5, p {
   font-style: normal;
   font-weight: normal;
   color: #0B0D17;
+}
+
+.navpanel {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  z-index: 4;
+  height: 100%;
+  width: 15.875rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(40px) brightness(100%);
+          backdrop-filter: blur(40px) brightness(100%);
+  left: 7.5625rem;
+  top: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  visibility: hidden;
+}
+
+.navpanel-close {
+  position: absolute;
+  background-image: url("../../assets/shared/icon-close.svg");
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.3125rem;
+  left: 11rem;
+  top: 2.121875rem;
+}
+
+.navpanel a {
+  text-decoration: none;
+  margin-left: 2rem;
+  color: #FFFFFF;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  line-height: 1.187rem;
+  letter-spacing: 0.16875rem;
+  text-transform: uppercase;
+  word-spacing: .7rem;
+}
+
+.navpanel-home {
+  margin-top: 7.3rem;
 }
