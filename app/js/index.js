@@ -49,7 +49,7 @@ panel()
 
 function loadData(type,image,title,body,km,time,i) {
 
-    fetch("../../assets/data.json")
+    fetch("https://raw.githubusercontent.com/gurpreet2188/frontend-mentor-space/master/assets/data.json")
     .then(response => {
         return response.json()
     })
