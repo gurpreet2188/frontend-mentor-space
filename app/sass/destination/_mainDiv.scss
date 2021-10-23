@@ -8,7 +8,9 @@
     text-align: center;
     font-weight: normal;
     font-style: normal;
-    margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 
     @include breakpoint-up(large) {
         display: grid;
@@ -56,6 +58,17 @@
             width: 27.875rem;
             height: 27.875rem;
 
+        }
+
+        &-crew {
+            order: 2;
+            // position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 70%;
+            height: 13.935rem;
+            margin-left: 20%;
+            margin-right: auto;
         }
     }
 
@@ -109,6 +122,28 @@
             font-size: $font-l;
             margin-top: 13%;
         }
+
+        &-crew {
+            margin: 0;
+            order: 4;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+            text-transform: uppercase;
+            margin-bottom:1rem;
+        }
+    }
+
+    &-subhead {
+        order: 4;
+        margin: .5rem;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 1.1rem;
+        text-transform: uppercase;
+        color: rgba($color: #fff, $alpha: .5);
     }
 
     &-body {
@@ -131,6 +166,8 @@
             letter-spacing: 0.1rem;
             line-height: 2rem;
         }
+
+
     }
 
     &-divider {
@@ -145,6 +182,40 @@
             grid-column: 2 / 2;
             margin-top: 62%;
             width: 78%;
+        }
+
+
+        &-crew {
+            order: 3;
+            height: 1px;
+            width: 100%;
+            background-color: #383B4B;
+            top: 0;
+        }
+    }
+
+    &-slider {
+        order: 4;
+        width: 30%;
+        height: 1rem;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        // &:not(:last-child) {
+        //     margin-right: 2rem;
+        // }
+
+        &-circle {
+            order: 4;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-radius: 50%;
+            background-color: $white;
         }
     }
 

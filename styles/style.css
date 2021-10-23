@@ -391,7 +391,9 @@ h5, p {
   text-align: center;
   font-weight: normal;
   font-style: normal;
-  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 64em) {
@@ -458,6 +460,18 @@ h5, p {
     width: 27.875rem;
     height: 27.875rem;
   }
+}
+
+.main-image-crew {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70%;
+  height: 13.935rem;
+  margin-left: 20%;
+  margin-right: auto;
 }
 
 .main-names {
@@ -527,6 +541,32 @@ h5, p {
   }
 }
 
+.main-title-crew {
+  margin: 0;
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.main-subhead {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+  margin: .5rem;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .main-body {
   margin: 0;
   -webkit-box-ordinal-group: 6;
@@ -576,6 +616,46 @@ h5, p {
     margin-top: 62%;
     width: 78%;
   }
+}
+
+.main-divider-crew {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  height: 1px;
+  width: 100%;
+  background-color: #383B4B;
+  top: 0;
+}
+
+.main-slider {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+  width: 30%;
+  height: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main-slider-circle {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background-color: #FFFFFF;
 }
 
 .main-avg {
@@ -673,5 +753,19 @@ h5, p {
     grid-column: 2 / 2;
     margin-top: 72%;
     margin-left: 40%;
+  }
+}
+
+.crew-bg {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../assets/crew/background-crew-mobile.jpg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/crew/background-crew-mobile.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 64em) {
+  .crew-bg {
+    background: url("../assets/crew/background-crew-desktop.jpg") no-repeat;
+    background-size: cover;
   }
 }
