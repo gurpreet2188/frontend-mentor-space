@@ -80,7 +80,7 @@ h5, p {
   }
   .navpanel-line {
     z-index: 8;
-    position: fixed;
+    position: absolute;
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.25);
     height: 1px;
