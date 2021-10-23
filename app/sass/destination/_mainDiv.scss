@@ -80,6 +80,47 @@
                 margin-right: 5rem;
             }
         }
+
+        &-tech {
+            order: 2;
+            margin: 0;
+            width: 100vw;
+            height: 10rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            // margin-left: auto;
+            // margin-right: auto;
+        }
+    }
+
+    &-tech {
+        order: 3;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 55%;
+        height: 3rem;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+       
+
+        &-btn {
+            order: 3;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: $white;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            font-size: 1.2rem;
+            line-height: 2.5rem;
+
+        }
+
     }
 
     &-names {
@@ -163,6 +204,7 @@
         line-height: 1.1rem;
         text-transform: uppercase;
         color: rgba($color: #fff, $alpha: .5);
+        letter-spacing: 0.1rem;
 
         @include breakpoint-up(large) {
             grid-row: 1 / 4;
@@ -355,4 +397,10 @@
             margin-left: 40%;
         }
     }
+}
+
+.btn-off {
+    background-color:#000;
+    border: 1px solid #fff;
+    color: #fff;
 }

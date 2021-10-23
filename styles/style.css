@@ -23,6 +23,12 @@ h5, p {
   opacity: .67;
 }
 
+.btn-on {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
 .navpanel {
   position: absolute;
   display: -webkit-box;
@@ -490,6 +496,55 @@ h5, p {
   }
 }
 
+.main-image-tech {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin: 0;
+  width: 100vw;
+  height: 10rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main-tech {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+  width: 55%;
+  height: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.main-tech-btn {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+
 .main-names {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -596,6 +651,7 @@ h5, p {
   line-height: 1.1rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1rem;
 }
 
 @media (min-width: 64em) {
@@ -856,6 +912,12 @@ h5, p {
   }
 }
 
+.btn-off {
+  background-color: #000;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
 .crew-bg {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../assets/crew/background-crew-mobile.jpg") no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/crew/background-crew-mobile.jpg") no-repeat;
@@ -866,6 +928,20 @@ h5, p {
 @media (min-width: 64em) {
   .crew-bg {
     background: url("../assets/crew/background-crew-desktop.jpg") no-repeat;
+    background-size: cover;
+  }
+}
+
+.tech-bg {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../assets/technology/background-technology-mobile.jpg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/technology/background-technology-mobile.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 64em) {
+  .tech-bg {
+    background: url("../assets/technology/background-technology-desktop.jpg") no-repeat;
     background-size: cover;
   }
 }
