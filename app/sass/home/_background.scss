@@ -2,4 +2,11 @@
         background-image: url('../assets/home/background-home-mobile.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+
+        @include breakpoint-up(large) {
+                background: url('../assets/home/background-home-desktop.jpg') no-repeat;
+                background-size: cover;
+                // min-height: 100%;
+                // min-width: 100%;
+        }
 }

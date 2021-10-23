@@ -13,6 +13,28 @@
     transition: all 300ms ease-in-out;
     visibility: hidden;
 
+    @include breakpoint-up(large) {
+        z-index: 7;
+        position: relative;
+        flex-direction: row;
+        visibility: visible;
+        height: 6rem;
+        width: 65%;
+        top: 2.5rem;
+        margin-left: auto;
+
+        &-line {
+            z-index: 8;
+            position: fixed;
+            display: inline-block;
+            background-color: rgba($color: #fff, $alpha: .25);
+            height: 1px;
+            width: 28%;
+            top: 9.5%;
+            left: 20%;
+        }
+    }
+
     &-close {
         position: absolute;
         background-image: url('../assets/shared/icon-close.svg');
@@ -21,6 +43,11 @@
         height: 1.3125rem;
         left: 11rem;
         top: 2.121875rem;
+
+        @include breakpoint-up(large) {
+            display: none;
+            left: 0;
+        }
     }
 
     a {
@@ -33,10 +60,20 @@
         letter-spacing: 0.16875rem;
         text-transform: uppercase;
         word-spacing: .7rem;
+
+        @include breakpoint-up(large) {
+            margin-top: 2.4375rem;
+            
+        }
         
     }
 
     &-home {
        margin-top: 7.3rem;
+
+       @include breakpoint-up(large) {
+            padding-left: 12%;
+        }
+        
     }
 }
