@@ -6,9 +6,19 @@
     z-index: 4;
     height: 100%;
     width: 15.875rem;
-    background-color: rgba($color: #000000, $alpha: .1);
-    backdrop-filter: blur(100px) brightness(90%);
-    left: 7.5625rem;
+    background-color: rgba($color: #000, $alpha: .3);
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+      }
+    @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+        
+        background-color: rgba($color: #000, $alpha: .9);
+    }
+
+    margin-left: auto;
+    right: 0;
     top: 0;
     transition: all 300ms ease-in-out;
     visibility: hidden;
@@ -29,8 +39,8 @@
             display: inline-block;
             background-color: rgba($color: #fff, $alpha: .25);
             height: 1px;
-            width: 28%;
-            top: 9.5%;
+            width: 24%;
+            top: 5.6rem;
             left: 20%;
         }
     }
