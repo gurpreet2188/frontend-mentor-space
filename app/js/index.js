@@ -8,17 +8,11 @@ const destination = document.querySelector('.navpanel-destination')
 const crew = document.querySelector('.navpanel-crew')
 const technology = document.querySelector('.navpanel-technology')
 
-
 let bodyText = ''
 bodyText = dynamicArea.innerHTML
 
 let currentPage = 'home'
 
-let jsonData
-
-let destinationArray = []
-let crewArray = []
-let technologyArray= []
 
 function panel() {
     menuBtn.addEventListener('click', e => {
@@ -78,28 +72,21 @@ function removeData (title,bodyText,km,time) {
 }
 
 function destinationArea() {
+    let pageLayout = new PageLayout
    body.className = ''
    body.classList.add('destination-bg')
    currentPage = 'destination'
    
-
    // main div
-    const mainDiv = document.createElement('div')
-    mainDiv.classList.add('main')
-    dynamicArea.appendChild(mainDiv)
+    const desDiv = document.createElement('div')
+    desDiv.classList.add('main')
+    dynamicArea.appendChild(desDiv)
    
    // header
-   const headerText = document.createElement('p')
-   let text = document.createTextNode('01 Pick your destination')
-   headerText.appendChild(text)
-   mainDiv.appendChild(headerText)
-   headerText.classList.add('main-header')
+   pageLayout.setHeader('01 Pick your destination', desDiv, 'main-header')
 
    // image
-   const image = document.createElement('div')
-   
-   image.classList.add('main-image')
-   mainDiv.appendChild(image)
+   pageLayout.setImage('main-image', desDiv)
 
    // names
    const namesDiv = document.createElement('div')
@@ -108,8 +95,9 @@ function destinationArea() {
    const mars = document.createElement('a')
    const europa = document.createElement('a')
    const titan = document.createElement('a')
-   let clsNames = [moon, mars, europa, titan]
-//    moon.classList.add('inactive')
+
+   const clsNames = [moon, mars, europa, titan]
+
    mars.classList.add('inactive')
    europa.classList.add('inactive')
    titan.classList.add('inactive')
@@ -126,84 +114,48 @@ function destinationArea() {
    namesDiv.appendChild(mars)
    namesDiv.appendChild(europa)
    namesDiv.appendChild(titan)
-   mainDiv.appendChild(namesDiv)
+   desDiv.appendChild(namesDiv)
 
    // title
-   const title = document.createElement('h1')
-   title.classList.add('main-title')
-   mainDiv.appendChild(title)
+   pageLayout.setTitle('main-title', desDiv)
+
    // body text
-   const bodyText = document.createElement('p')
-   bodyText.classList.add('main-body')
-   mainDiv.appendChild(bodyText)
+   pageLayout.setPara('main-body', desDiv)
+
    //divider
    const divider = document.createElement('span')
    divider.classList.add('main-divider')
-   mainDiv.appendChild(divider)
+   desDiv.appendChild(divider)
+
    // p
    const avgDist = document.createElement('p')
     avgDist.appendChild(aText('AVG. DISTANCE'))
     avgDist.classList.add('main-avg')
-   mainDiv.appendChild(avgDist)
+   desDiv.appendChild(avgDist)
+
    // h2
    const km = document.createElement('h2')
    km.classList.add('main-km')
-   mainDiv.appendChild(km)
+   desDiv.appendChild(km)
 
    //p
    const est = document.createElement('p')
    est.appendChild(aText('EST. Travel Time'))
    est.classList.add('main-est')
-    mainDiv.appendChild(est)
+    desDiv.appendChild(est)
+
    // h2
    const time = document.createElement('h2')
    time.classList.add('main-time')
-   mainDiv.appendChild(time)
+   desDiv.appendChild(time)
 
-//    moon.classList.add('active')
-   loadData('dest', image, title, bodyText, km, time, 0)
+   loadData('dest', pageLayout.image,  pageLayout.title, pageLayout.para, km, time, 0)
 
    // button handling
-   moon.addEventListener('click', e => {
-    for(i in clsNames) {
-        if(!clsNames[i].classList.contains('inactive')) {
-            clsNames[i].classList.add('inactive')
-        }
-    }
-    moon.classList.remove('inactive')
-    removeData(title,bodyText,km,time)
-    loadData('dest', image, title, bodyText, km, time, 0)
-   })
-   mars.addEventListener('click', e => {
-    for(i in clsNames) {
-        if(!clsNames[i].classList.contains('inactive')) {
-            clsNames[i].classList.add('inactive')
-        }
-    }
-    mars.classList.remove('inactive')
-    removeData(title,bodyText,km,time)
-    loadData('dest', image, title, bodyText, km, time, 1)
-   })
-  europa.addEventListener('click', e => {
-    for(i in clsNames) {
-        if(!clsNames[i].classList.contains('inactive')) {
-            clsNames[i].classList.add('inactive')
-        }
-    }
-    europa.classList.remove('inactive')
-    removeData(title,bodyText,km,time)
-    loadData('dest', image, title, bodyText, km, time, 2)
-   })
-   titan.addEventListener('click', e => {
-    for(i in clsNames) {
-        if(!clsNames[i].classList.contains('inactive')) {
-            clsNames[i].classList.add('inactive')
-        }
-    }
-    titan.classList.remove('inactive')
-    removeData(title,bodyText,km,time)
-    loadData('dest', image, title, bodyText, km, time, 3)
-   })
+   buttonHandle(clsNames ,moon, pageLayout.image,  pageLayout.title, pageLayout.para, km, time, 0)
+   buttonHandle(clsNames ,mars, pageLayout.image,  pageLayout.title, pageLayout.para, km, time, 1)
+   buttonHandle(clsNames ,europa, pageLayout.image,  pageLayout.title, pageLayout.para, km, time, 2)
+   buttonHandle(clsNames ,titan, pageLayout.image,  pageLayout.title, pageLayout.para, km, time, 3)
 }
 
 function aText (tx) {
@@ -211,6 +163,51 @@ function aText (tx) {
     return aT
 }
 
+function buttonHandle(clsNames, btn, image, title, bodyText, km, time, i) {
+    btn.addEventListener('click', e => {
+        for(c in clsNames) {
+            if(!clsNames[c].classList.contains('inactive')) {
+                clsNames[c].classList.add('inactive')
+            }
+        }
+        btn.classList.remove('inactive')
+        setTimeout(removeData(title,bodyText,km,time), 100)
+        setTimeout(loadData('dest', image, title, bodyText, km, time, i), 300)
+    })
+}
+
+class PageLayout {
+
+    constructor(header, image, subhead, title, para) {
+        this.header = document.createElement('p')
+        this.image = document.createElement('div')
+        this.subhead = subhead
+        this.title = document.createElement('h1')
+        this.para = document.createElement('p')
+    }
+
+    setHeader(txt, baseDiv, clsname) {
+        let text = document.createTextNode(`${txt}`)
+        this.header.appendChild(text)
+        baseDiv.appendChild(this.header)
+        this.header.classList.add(`${clsname}`)
+    }
+
+    setImage(cls, baseDiv) {
+        this.image.classList.add(`${cls}`)
+        baseDiv.appendChild(this.image)
+    }
+
+    setTitle (cls, baseDiv) {
+        this.title.classList.add(`${cls}`)
+        baseDiv.appendChild(this.title)
+    }
+
+    setPara(cls, baseDiv) {
+        this.para.classList.add(`${cls}`)
+        baseDiv.appendChild(this.para)
+    }
+}
 
 
 
