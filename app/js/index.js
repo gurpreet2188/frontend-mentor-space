@@ -279,7 +279,7 @@ function crewArea() {
   //title
   pageLayout.setTitle("main-title-crew", crewDiv);
   //para
-  pageLayout.setPara("main-body", crewDiv);
+  pageLayout.setPara("main-body-crew", crewDiv);
 
   //set dfault
   
