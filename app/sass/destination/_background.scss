@@ -2,4 +2,9 @@
         background-image: url('../assets/destination/background-destination-mobile.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+
+        @include breakpoint-up(large) {
+                background: url('../assets/destination/background-destination-desktop.jpg') no-repeat;
+                background-size: cover;
+        }
 }

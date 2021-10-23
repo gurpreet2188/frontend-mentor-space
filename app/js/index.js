@@ -26,14 +26,22 @@ function panel() {
     dynamicArea.innerHTML = bodyText;
     body.className = "";
     body.classList.add("background");
-    navpanel.style.visibility = "hidden";
+    if(!window.matchMedia("(max-width: 64rem)")) {
+      navpanel.style.visibility = "hidden";
+    } else {
+      navpanel.style.visibility = "visible";
+    }
     currentPage = "home";
   });
 
   destination.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     destinationArea();
-    navpanel.style.visibility = "hidden";
+    if(!window.matchMedia("(max-width: 64rem)")) {
+      navpanel.style.visibility = "hidden";
+    } else {
+      navpanel.style.visibility = "visible";
+    }
   });
 }
 
