@@ -10,7 +10,7 @@ const technology = document.querySelector(".navpanel-technology");
 
 let bodyText = "";
 bodyText = dynamicArea.innerHTML;
-
+let size = window.matchMedia("(min-width: 64em)")
 let currentPage = "home";
 
 function panel() {
@@ -71,6 +71,7 @@ function panel() {
 panel();
 
 function loadData(type, image, title, body, km, time, i) {
+  
   fetch(
     "https://raw.githubusercontent.com/gurpreet2188/frontend-mentor-space/master/assets/data.json"
   )
@@ -109,7 +110,12 @@ function loadData(type, image, title, body, km, time, i) {
           title.appendChild(tName);
           let tPara = aText(`${data.technology[i].description}`);
           body.appendChild(tPara);
-          image.style.backgroundImage = `url('${data.technology[i].images.landscape}')`
+          if (size.matches) {
+            console.log('test')
+            image.style.backgroundImage = `url('${data.technology[i].images.portrait}')`
+          } else {
+            image.style.backgroundImage = `url('${data.technology[i].images.landscape}')`
+          }
           break;
       }
     });
@@ -372,7 +378,9 @@ function techArea() {
   body.className = "";
   body.classList.add("tech-bg");
   const techDiv = document.createElement("div");
-  techDiv.classList.add("main");
+    techDiv.classList.add("main");
+
+  
   dynamicArea.appendChild(techDiv);
 
   //header
@@ -409,11 +417,13 @@ function techArea() {
   const pText = document.createTextNode('THE TERMINOLOGY...')
   txt.appendChild(pText)
   techDiv.appendChild(txt)
-  txt.classList.add('main-subhead')
+
+  //sub head
+  txt.classList.add('main-subhead-tech')
   //title
-  pageLayout.setTitle('main-title-crew', techDiv)
+  pageLayout.setTitle('main-title-tech', techDiv)
   //para
-  pageLayout.setPara('main-body', techDiv)
+  pageLayout.setPara('main-body-tech', techDiv)
 
   // set default
   loadData(
