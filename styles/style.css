@@ -1105,3 +1105,45 @@ h5, p {
     background-size: cover;
   }
 }
+
+.base-bg-home {
+  background: url("../assets/home/background-home-mobile.jpg") no-repeat center/cover;
+}
+
+@media (min-width: 64em) {
+  .base-bg-home {
+    background: url("../assets/home/background-home-desktop.jpg") no-repeat center/cover;
+  }
+}
+
+.base-bg-destination {
+  background-image: url("../assets/destination/background-destination-mobile.jpg") no-repeat center/cover;
+}
+
+@media (min-width: 64em) {
+  .base-bg-destination {
+    background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center/cover;
+  }
+}
+
+.base-bg-crew {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../assets/crew/background-crew-mobile.jpg") no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/crew/background-crew-mobile.jpg") no-repeat center/cover;
+}
+
+@media (min-width: 64em) {
+  .base-bg-crew {
+    background: url("../assets/crew/background-crew-desktop.jpg") no-repeat center/cover;
+  }
+}
+
+.base-bg-tech {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../assets/technology/background-technology-mobile.jpg") no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/technology/background-technology-mobile.jpg") no-repeat center/cover;
+}
+
+@media (min-width: 64em) {
+  .base-bg-tech {
+    background: url("../assets/technology/background-technology-desktop.jpg") no-repeat center/cover;
+  }
+}

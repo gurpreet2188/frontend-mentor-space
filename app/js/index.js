@@ -142,7 +142,7 @@ function removeTech(title, bodyText) {
 function destinationArea() {
   let pageLayout = new PageLayout();
   body.className = "";
-  body.classList.add("destination-bg");
+  body.classList.add("base-bg-destination");
   currentPage = "destination";
 
   // main div
@@ -274,7 +274,7 @@ function crewArea() {
   let pageLayout = new PageLayout();
 
   body.className = "";
-  body.classList.add("crew-bg");
+  body.classList.add("base-bg-crew");
 
   const crewDiv = document.createElement("div");
   crewDiv.classList.add("main");
@@ -376,7 +376,7 @@ function crewArea() {
 function techArea() {
   let pageLayout = new PageLayout();
   body.className = "";
-  body.classList.add("tech-bg");
+  body.classList.add("base-bg-tech");
   const techDiv = document.createElement("div");
     techDiv.classList.add("main");
 
