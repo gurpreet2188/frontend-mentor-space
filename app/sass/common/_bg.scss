@@ -1,0 +1,57 @@
+.bg {
+        &-home{
+            background: url('../assets/home/background-home-mobile.jpg') no-repeat;
+            background-size: cover;
+            @include breakpoint-up(medium) {
+                background: url('../assets/home/background-home-tablet.jpg') no-repeat;
+                background-size: cover;
+            }
+            @include breakpoint-up(large) {
+                background: url('../assets/home/background-home-desktop.jpg') no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &-destination {
+            background: url('../assets/destination/background-destination-mobile.jpg') no-repeat;
+            background-size: cover;
+            @include breakpoint-up(medium) {
+                background: url('../assets/destination/background-destination-tablet.jpg') no-repeat;
+                background-size: cover;
+            }
+            @include breakpoint-up(large) {
+                    background: url('../assets/destination/background-destination-desktop.jpg') no-repeat;
+                    background-size: cover;
+            }
+        }
+
+        &-crew { 
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+            url('../assets/crew/background-crew-mobile.jpg') no-repeat;
+            background-size: cover;
+            @include breakpoint-up(medium) {
+                background: url('../assets/crew/background-crew-tablet.jpg') no-repeat;
+                background-size: cover;
+            }
+            @include breakpoint-up(large) {
+                    background: url('../assets/crew/background-crew-desktop.jpg') no-repeat;
+                    background-size: cover;
+                      
+            }
+        }
+
+        &-tech {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+            url('../assets/technology/background-technology-mobile.jpg') no-repeat;
+            background-size: cover;
+            @include breakpoint-up(medium) {
+                background: url('../assets/technology/background-technology-tablet.jpg') no-repeat;
+                background-size: cover;
+            }
+            @include breakpoint-up(large) {
+                    background: url('../assets/technology/background-technology-desktop.jpg') no-repeat;
+                    background-size: cover;
+                    
+            }
+        }
+    }

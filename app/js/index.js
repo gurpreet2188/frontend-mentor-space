@@ -15,53 +15,56 @@ let currentPage = "home";
 
 function panel() {
   menuBtn.addEventListener("click", (e) => {
-    navpanel.style.visibility = "visible";
+    if(!menuBtn.classList.contains('menu-close') && !menuBtn.classList.contains('menu-open')) {
+      menuBtn.classList.add('menu-open')
+      navpanel.classList.remove('close');
+      navpanel.classList.add('open');
+    } else if (menuBtn.classList.contains('menu-close')){
+      menuBtn.classList.remove('menu-close')
+      menuBtn.classList.add('menu-open')
+      navpanel.classList.remove('close');
+      navpanel.classList.add('open');
+    } else if (menuBtn.classList.contains('menu-open')) {
+      menuBtn.classList.remove('menu-open')
+      menuBtn.classList.add('menu-close')
+      navpanel.classList.add('close');
+      navpanel.classList.remove('open');
+    }
   });
 
-  closeBtn.addEventListener("click", (e) => {
-    navpanel.style.visibility = "hidden";
-  });
+  // closeBtn.addEventListener("click", (e) => {
+  //   navpanel.classList.remove('open');
+  //   navpanel.classList.add('close');
+  // });
 
   home.addEventListener("click", (e) => {
     dynamicArea.innerHTML = bodyText;
     body.className = "";
-    body.classList.add("background");
-    if (!window.matchMedia("(max-width: 64rem)")) {
-      navpanel.style.visibility = "hidden";
-    } else {
-      navpanel.style.visibility = "visible";
-    }
+    body.classList.add("bg-home");
+    navpanel.classList.remove('open');
+    navpanel.classList.add('close');
     currentPage = "home";
   });
 
   destination.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     destinationArea();
-    if (!window.matchMedia("(max-width: 64rem)")) {
-      navpanel.style.visibility = "hidden";
-    } else {
-      navpanel.style.visibility = "visible";
-    }
+    navpanel.classList.remove('open');
+    navpanel.classList.add('close');
   });
 
   crew.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     crewArea();
-    if (!window.matchMedia("(max-width: 64rem)")) {
-      navpanel.style.visibility = "hidden";
-    } else {
-      navpanel.style.visibility = "visible";
-    }
+    navpanel.classList.remove('open');
+    navpanel.classList.add('close');
   });
 
   technology.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     techArea();
-    if (!window.matchMedia("(max-width: 64rem)")) {
-      navpanel.style.visibility = "hidden";
-    } else {
-      navpanel.style.visibility = "visible";
-    }
+    navpanel.classList.remove('open');
+    navpanel.classList.add('close');
   });
 }
 
@@ -142,7 +145,7 @@ function removeTech(title, bodyText) {
 function destinationArea() {
   let pageLayout = new PageLayout();
   body.className = "";
-  body.classList.add("base-bg-destination");
+  body.classList.add("bg-destination");
   currentPage = "destination";
 
   // main div
@@ -274,7 +277,7 @@ function crewArea() {
   let pageLayout = new PageLayout();
 
   body.className = "";
-  body.classList.add("base-bg-crew");
+  body.classList.add("bg-crew");
 
   const crewDiv = document.createElement("div");
   crewDiv.classList.add("main");

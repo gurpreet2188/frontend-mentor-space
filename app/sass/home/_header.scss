@@ -5,25 +5,28 @@
     gap: 2rem;
     width: 3rem;
     justify-content: space-between;
+    height: 2.5rem;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
 
-    @include breakpoint-up(large) {
+    @include breakpoint-up(meidum) {
         position: absolute;
         z-index: -1;
+        height: 3rem;
         margin-top: 4rem;
         margin-left: 3.4375rem;
     }
     
     &-logo {
-        flex: 12;
+        flex: 1;
         order: 1;
        background: url('../assets/shared/logo.svg');
        background-repeat: no-repeat;
        background-size: contain;
        width: 2.5rem;
        height: 2.5rem;
+       align-items: flex-start;
 
        @include breakpoint-up(large) {
         flex: 1;
@@ -33,21 +36,14 @@
     }
 
     &-menu {
-        flex: 2;
+        flex: 1;
         order: 2;
-        background: url('../assets/shared/icon-hamburger.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: auto;
-        margin-top: .6rem;
-        width: 1.5rem;
-        height: 1.3125rem;
-        align-items: flex-end;
-        transform: translateX(40%);
-
+        background: url('../assets/shared/icon-hamburger.svg') no-repeat center / contain;
+        max-width: 1.5rem;
+        height: 60%;
+        margin: auto;
         @include breakpoint-up(large) {
             display: none;
-            // background: none;
         }
     }
 }

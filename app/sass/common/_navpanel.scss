@@ -1,12 +1,17 @@
 .navpanel {
+    opacity: 0;
+    transform: translateX(100%);
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     z-index: 4;
-    height: 100%;
-    width: 15.875rem;
-    background-color: rgba($color: #000, $alpha: .3);
+    height: 100vh;
+    min-width: 15.875rem;
+    background-color: rgba($color: #000, $alpha: .3); //fallback
+    margin-left: auto;
+    right: 0;
+    top: 0;
 
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
           -webkit-backdrop-filter: blur(10px);
@@ -16,12 +21,6 @@
         
         background-color: rgba($color: #000, $alpha: .9);
     }
-
-    margin-left: auto;
-    right: 0;
-    top: 0;
-    transition: all 300ms ease-in-out;
-    visibility: hidden;
 
     @include breakpoint-up(large) {
         z-index: 7;
@@ -45,20 +44,20 @@
         }
     }
 
-    &-close {
-        position: absolute;
-        background-image: url('../assets/shared/icon-close.svg');
-        background-repeat: no-repeat;
-        width: 1.5rem;
-        height: 1.3125rem;
-        left: 11rem;
-        top: 2.121875rem;
+    // &-close {
+    //     position: absolute;
+    //     background-image: url('../assets/shared/icon-close.svg');
+    //     background-repeat: no-repeat;
+    //     width: 1.5rem;
+    //     height: 1.3125rem;
+    //     left: 11rem;
+    //     top: 2.121875rem;
 
-        @include breakpoint-up(large) {
-            display: none;
-            left: 0;
-        }
-    }
+    //     @include breakpoint-up(large) {
+    //         display: none;
+    //         left: 0;
+    //     }
+    // }
 
     a {
         text-decoration: none;
@@ -79,7 +78,7 @@
     }
 
     &-home {
-       margin-top: 7.3rem;
+       margin-top: 7.375rem;
 
        @include breakpoint-up(large) {
             padding-left: 12%;

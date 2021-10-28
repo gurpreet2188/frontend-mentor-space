@@ -1,0 +1,34 @@
+@keyframes openPanel {
+  0% {
+        opacity: 0.5;
+      transform: translateX(100%);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.open {
+    animation: openPanel .5s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes closePanel {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateX(100%);
+    }
+}
+
+.close {
+    animation: closePanel .3s;
+    opacity: 0;
+    transform: translateX(100%);
+}

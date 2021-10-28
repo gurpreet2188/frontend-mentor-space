@@ -2,22 +2,26 @@
 @import "mixins";
 
 @import "main";
-@import "navpanel";
 
 //home
-@import "./home/header";
+// @import "./home/header";
 @import "./home/intro";
-@import "./home/background";
+// @import "./home/background";
 
 //destination
-@import "./destination/background";
+// @import "./destination/background";
 @import "./destination/mainDiv";
 
 //crew
-@import "./crew/background";
+// @import "./crew/background";
 
 //tech
-@import "./technology/background";
+// @import "./technology/background";
 
 //css rewrite
-@import './common/base';
+@import './common/bg';
+@import './common/navbar';
+@import "./common/navpanel";
+
+@import './animations/panel';
+@import './animations/menu'
