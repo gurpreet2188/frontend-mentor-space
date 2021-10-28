@@ -41,6 +41,8 @@ function panel() {
     dynamicArea.innerHTML = bodyText;
     body.className = "";
     body.classList.add("bg-home");
+    menuBtn.classList.remove('menu-open')
+    menuBtn.classList.add('menu-close')
     navpanel.classList.remove('open');
     navpanel.classList.add('close');
     currentPage = "home";
@@ -49,6 +51,8 @@ function panel() {
   destination.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     destinationArea();
+    menuBtn.classList.remove('menu-open')
+    menuBtn.classList.add('menu-close')
     navpanel.classList.remove('open');
     navpanel.classList.add('close');
   });
@@ -56,6 +60,8 @@ function panel() {
   crew.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     crewArea();
+    menuBtn.classList.remove('menu-open')
+    menuBtn.classList.add('menu-close')
     navpanel.classList.remove('open');
     navpanel.classList.add('close');
   });
@@ -63,6 +69,8 @@ function panel() {
   technology.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     techArea();
+    menuBtn.classList.remove('menu-open')
+    menuBtn.classList.add('menu-close')
     navpanel.classList.remove('open');
     navpanel.classList.add('close');
   });
@@ -379,7 +387,7 @@ function crewArea() {
 function techArea() {
   let pageLayout = new PageLayout();
   body.className = "";
-  body.classList.add("base-bg-tech");
+  body.classList.add("bg-tech");
   const techDiv = document.createElement("div");
     techDiv.classList.add("main");
 
