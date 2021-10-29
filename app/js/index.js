@@ -3,81 +3,94 @@ const closeBtn = document.querySelector(".navpanel-close");
 const navpanel = document.querySelector(".navpanel");
 const body = document.querySelector("body");
 const dynamicArea = document.querySelector(".dynamic-area");
-const home = document.querySelector(".navpanel-home");
-const destination = document.querySelector(".navpanel-destination");
-const crew = document.querySelector(".navpanel-crew");
-const technology = document.querySelector(".navpanel-technology");
+const home = document.querySelector(".navpanel-text-home");
+const destination = document.querySelector(".navpanel-text-destination");
+const crew = document.querySelector(".navpanel-text-crew");
+const technology = document.querySelector(".navpanel-text-technology");
 
 let bodyText = "";
 bodyText = dynamicArea.innerHTML;
-let size = window.matchMedia("(min-width: 64em)")
+const size = window.matchMedia("(min-width: 64em)")
 let currentPage = "home";
 
+const btns = [home, destination, crew, technology]
+
+function panelItems(type) {
+  switch(type) {
+    case 'none':
+      menuBtn.classList.add('menu-open')
+      // navpanel.classList.remove('close');
+      navpanel.classList.add('open');
+      break
+    case 'm-close':
+        menuBtn.classList.remove('menu-open')
+        menuBtn.classList.add('menu-close')
+        navpanel.classList.remove('open');
+        navpanel.classList.add('close');
+        break
+      
+    case 'm-open':
+        menuBtn.classList.remove('menu-close')
+        menuBtn.classList.add('menu-open')
+        navpanel.classList.remove('close');
+        navpanel.classList.add('open');
+        break
+
+    case 'btn-state':
+      for(i in btns) {
+        if (btns[i].classList.contains('state-active')) {
+          btns[i].classList.remove('state-active')
+        }
+      }
+  }
+}
+
 function panel() {
+
   menuBtn.addEventListener("click", (e) => {
     if(!menuBtn.classList.contains('menu-close') && !menuBtn.classList.contains('menu-open')) {
-      menuBtn.classList.add('menu-open')
-      navpanel.classList.remove('close');
-      navpanel.classList.add('open');
+     panelItems('none')
     } else if (menuBtn.classList.contains('menu-close')){
-      menuBtn.classList.remove('menu-close')
-      menuBtn.classList.add('menu-open')
-      navpanel.classList.remove('close');
-      navpanel.classList.add('open');
+      panelItems('m-open')
     } else if (menuBtn.classList.contains('menu-open')) {
-      menuBtn.classList.remove('menu-open')
-      menuBtn.classList.add('menu-close')
-      navpanel.classList.add('close');
-      navpanel.classList.remove('open');
+      panelItems('m-close')
     }
   });
-
-  // closeBtn.addEventListener("click", (e) => {
-  //   navpanel.classList.remove('open');
-  //   navpanel.classList.add('close');
-  // });
 
   home.addEventListener("click", (e) => {
     dynamicArea.innerHTML = bodyText;
     body.className = "";
     body.classList.add("bg-home");
-    menuBtn.classList.remove('menu-open')
-    menuBtn.classList.add('menu-close')
-    navpanel.classList.remove('open');
-    navpanel.classList.add('close');
+    panelItems('m-close')
+    panelItems('btn-state')
+    setTimeout(home.classList.add('state-active'), 100)
     currentPage = "home";
   });
 
   destination.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     destinationArea();
-    menuBtn.classList.remove('menu-open')
-    menuBtn.classList.add('menu-close')
-    navpanel.classList.remove('open');
-    navpanel.classList.add('close');
+    panelItems('m-close')
+    panelItems('btn-state')
+    setTimeout(destination.classList.add('state-active'), 100)
   });
 
   crew.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
-    crewArea();
-    menuBtn.classList.remove('menu-open')
-    menuBtn.classList.add('menu-close')
-    navpanel.classList.remove('open');
-    navpanel.classList.add('close');
+    crewArea()
+    panelItems('m-close')
+    panelItems('btn-state')
+   setTimeout(crew.classList.add('state-active'), 100)
   });
 
   technology.addEventListener("click", (e) => {
     dynamicArea.innerHTML = "";
     techArea();
-    menuBtn.classList.remove('menu-open')
-    menuBtn.classList.add('menu-close')
-    navpanel.classList.remove('open');
-    navpanel.classList.add('close');
+    panelItems('m-close')
+    panelItems('btn-state')
+    setTimeout(technology.classList.add('state-active'), 100)
   });
 }
-
-
-
 
 panel();
 

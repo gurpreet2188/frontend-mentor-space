@@ -25,12 +25,14 @@
     @include breakpoint-up(large) {
         z-index: 7;
         position: relative;
+        transform: none;
+        opacity: 1;
         flex-direction: row;
-        visibility: visible;
         height: 6rem;
-        width: 65%;
+        width: Min(57.638vw, 51.875rem);
         top: 2.5rem;
         margin-left: auto;
+        gap: 3rem;
 
         &-line {
             z-index: 8;
@@ -44,45 +46,41 @@
         }
     }
 
-    // &-close {
-    //     position: absolute;
-    //     background-image: url('../assets/shared/icon-close.svg');
-    //     background-repeat: no-repeat;
-    //     width: 1.5rem;
-    //     height: 1.3125rem;
-    //     left: 11rem;
-    //     top: 2.121875rem;
+   &-text {
+       flex: 1;
+       order: 1;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 7.375rem;
 
-    //     @include breakpoint-up(large) {
-    //         display: none;
-    //         left: 0;
-    //     }
-    // }
+        a {
+            text-decoration: none;
+            margin-left: 2rem;
+            color: $white;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: $font-subheading-m;
+            line-height: 1.187rem;
+            letter-spacing: 0.16875rem;
+            text-transform: uppercase;
+            word-spacing: .7rem;
 
-    a {
-        text-decoration: none;
-        margin-left: 2rem;
-        color: $white;
-        font-family: 'Barlow Condensed', sans-serif;
-        font-size: $font-subheading-m;
-        line-height: 1.187rem;
-        letter-spacing: 0.16875rem;
-        text-transform: uppercase;
-        word-spacing: .7rem;
+            @include breakpoint-up(large) {
+                padding-top: 2.6rem;
+                margin-left: 0;
+                word-spacing: .5rem;
+                letter-spacing: 2.7px;
+            }
+        }
 
         @include breakpoint-up(large) {
-            margin-top: 2.4375rem;
-            
+            flex-direction: row;
+            gap: 1.8rem;
+            margin: 0;
+            padding: 0;
+            margin-left: 10%;
         }
-        
-    }
+   }
 
-    &-home {
-       margin-top: 7.375rem;
-
-       @include breakpoint-up(large) {
-            padding-left: 12%;
-        }
-        
-    }
 }

@@ -11,9 +11,11 @@
 }
 
 .open {
-    animation: openPanel .5s;
-    opacity: 1;
-    transform: translateX(0);
+    @include breakpoint-down (small) {
+        animation: openPanel .5s;
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes closePanel {
@@ -28,7 +30,10 @@
 }
 
 .close {
-    animation: closePanel .3s;
-    opacity: 0;
-    transform: translateX(100%);
+
+    @include breakpoint-down(small){
+        animation: closePanel .3s;
+        opacity: 0;
+        transform: translateX(100%);
+    }
 }
