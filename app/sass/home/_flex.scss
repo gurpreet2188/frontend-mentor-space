@@ -7,6 +7,15 @@
     width: 84%;
     margin:auto;
     padding-top: 3rem;
+
+    @include breakpoint-up(large) {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 25rem;
+        padding-top: 18rem;
+        width: 81%;
+    }
+
     &-text {
         order: 1;
         display: flex;
@@ -15,6 +24,12 @@
         align-items: center;
         gap: 1.1rem;
         padding-bottom: 2rem;
+
+        @include breakpoint-up(medium) {
+            width: 38%;
+            gap: 4rem;
+            padding-bottom: 0;
+        }
     }
 
     &-header {
@@ -29,6 +44,10 @@
         @extend .common-title;
         font-size: 5rem;
         line-height: 6.25rem;
+
+        @include breakpoint-up(large) {
+            font-size: $font-xl;
+        }
     }
 
     &-para {
@@ -43,8 +62,20 @@
         border-radius: 50%;
         width: 9.375rem;
         height: 9.375rem;
+        @extend .common-title;
+        color: #0B0D17;
+        font-size: $font-sm;
         text-decoration: none;
         text-align: center;
+
+
+        @include breakpoint-up(large) {
+            margin: 0;
+            padding: 0;
+            width: 17.125rem;
+            height: 17.125rem;
+            line-height: 17rem;
+        }
     }
 
 }

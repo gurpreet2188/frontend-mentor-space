@@ -8,5 +8,11 @@
         letter-spacing: 2.7px;
         text-transform: uppercase;
         color: $blueish;
+
+        @include breakpoint-up(large) {
+            font-size: $font-sm;
+            letter-spacing: 4.725px;
+            line-height: 2.125rem;
+        }
     }
 }

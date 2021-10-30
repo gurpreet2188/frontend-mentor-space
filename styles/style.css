@@ -1170,7 +1170,15 @@ h1, h2, h3, h4 {
   color: #D0D6F9;
 }
 
-.common-title, .home-title {
+@media (min-width: 64em) {
+  .common-header, .home-header {
+    font-size: 2rem;
+    letter-spacing: 4.725px;
+    line-height: 2.125rem;
+  }
+}
+
+.common-title, .home-title, .home-btn {
   margin: 0;
   font-family: Bellefair;
   font-style: normal;
@@ -1190,6 +1198,14 @@ h1, h2, h3, h4 {
   color: #D0D6F9;
   line-height: 1.5625rem;
   text-align: center;
+}
+
+@media (min-width: 64em) {
+  .common-para, .home-para {
+    text-align: left;
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
 }
 
 @-webkit-keyframes openPanel {
@@ -1511,6 +1527,21 @@ h1, h2, h3, h4 {
   padding-top: 3rem;
 }
 
+@media (min-width: 64em) {
+  .home {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    gap: 25rem;
+    padding-top: 18rem;
+    width: 81%;
+  }
+}
+
 .home-text {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -1530,6 +1561,14 @@ h1, h2, h3, h4 {
           align-items: center;
   gap: 1.1rem;
   padding-bottom: 2rem;
+}
+
+@media (min-width: 40em) {
+  .home-text {
+    width: 38%;
+    gap: 4rem;
+    padding-bottom: 0;
+  }
 }
 
 .home-header {
@@ -1552,6 +1591,12 @@ h1, h2, h3, h4 {
   line-height: 6.25rem;
 }
 
+@media (min-width: 64em) {
+  .home-title {
+    font-size: 9.375rem;
+  }
+}
+
 .home-para {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -1569,6 +1614,18 @@ h1, h2, h3, h4 {
   border-radius: 50%;
   width: 9.375rem;
   height: 9.375rem;
+  color: #0B0D17;
+  font-size: 2rem;
   text-decoration: none;
   text-align: center;
+}
+
+@media (min-width: 64em) {
+  .home-btn {
+    margin: 0;
+    padding: 0;
+    width: 17.125rem;
+    height: 17.125rem;
+    line-height: 17rem;
+  }
 }
