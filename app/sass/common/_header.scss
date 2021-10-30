@@ -9,6 +9,10 @@
         text-transform: uppercase;
         color: $blueish;
 
+        @include breakpoint-up(medium) {
+            font-size: 1.25rem;
+            letter-spacing: 3.375px;
+        }
         @include breakpoint-up(large) {
             font-size: $font-sm;
             letter-spacing: 4.725px;

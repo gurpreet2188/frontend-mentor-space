@@ -29,12 +29,13 @@
         opacity: 1;
         flex-direction: row;
         height: 6rem;
-        width: 60vw;
+        width: 62.2%;
         top: 0rem;
         margin-left: auto;
         gap: 3rem;
 
     }
+
 
     @include breakpoint-up(large) {
         z-index: 7;
@@ -42,7 +43,7 @@
         opacity: 1;
         flex-direction: row;
         height: 6rem;
-        width: Min(57.638vw, 51.875rem);
+        max-width: 58%;
         top: 2.5rem;
         margin-left: auto;
         gap: 3rem;
@@ -88,7 +89,7 @@
 
         @include breakpoint-up(medium) {
             flex-direction: row;
-            gap: 1rem;
+            gap: 0rem;
             margin: 0;
             padding: 0;
             align-items: center;
@@ -98,7 +99,7 @@
             gap: 1.8rem;
             margin: 0;
             padding: 0;
-            margin-left: 10%;
+            margin-left: 7%;
             justify-content: flex-start;
         }
 

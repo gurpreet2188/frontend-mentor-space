@@ -961,7 +961,7 @@ h1, h2, h3, h4 {
         -ms-flex-direction: row;
             flex-direction: row;
     height: 6rem;
-    width: 60vw;
+    width: 62.2%;
     top: 0rem;
     margin-left: auto;
     gap: 3rem;
@@ -978,7 +978,7 @@ h1, h2, h3, h4 {
         -ms-flex-direction: row;
             flex-direction: row;
     height: 6rem;
-    width: Min(57.638vw, 51.875rem);
+    max-width: 58%;
     top: 2.5rem;
     margin-left: auto;
     gap: 3rem;
@@ -1040,7 +1040,7 @@ h1, h2, h3, h4 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 1rem;
+    gap: 0rem;
     margin: 0;
     padding: 0;
     -webkit-box-align: center;
@@ -1058,7 +1058,7 @@ h1, h2, h3, h4 {
     gap: 1.8rem;
     margin: 0;
     padding: 0;
-    margin-left: 10%;
+    margin-left: 7%;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
@@ -1093,6 +1093,13 @@ h1, h2, h3, h4 {
   color: #D0D6F9;
 }
 
+@media (min-width: 40em) {
+  .common-header, .home-header {
+    font-size: 1.25rem;
+    letter-spacing: 3.375px;
+  }
+}
+
 @media (min-width: 64em) {
   .common-header, .home-header {
     font-size: 2rem;
@@ -1121,6 +1128,13 @@ h1, h2, h3, h4 {
   color: #D0D6F9;
   line-height: 1.5625rem;
   text-align: center;
+}
+
+@media (min-width: 40em) {
+  .common-para, .navpanel-text span, .home-para {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 64em) {
@@ -1450,6 +1464,13 @@ h1, h2, h3, h4 {
   padding-top: 3rem;
 }
 
+@media (min-width: 40em) {
+  .home {
+    padding-top: 15%;
+    gap: calc(100vh / 11);
+  }
+}
+
 @media (min-width: 64em) {
   .home {
     -webkit-box-orient: horizontal;
@@ -1488,6 +1509,13 @@ h1, h2, h3, h4 {
 
 @media (min-width: 40em) {
   .home-text {
+    width: 57%;
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .home-text {
     width: 38%;
     gap: 4rem;
     padding-bottom: 0;
@@ -1514,9 +1542,15 @@ h1, h2, h3, h4 {
   line-height: 6.25rem;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 40em) {
   .home-title {
     font-size: 9.375rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .home-title {
+    max-width: 100%;
   }
 }
 
@@ -1544,12 +1578,21 @@ h1, h2, h3, h4 {
   line-height: 9.375rem;
 }
 
+@media (min-width: 40em) {
+  .home-btn {
+    min-width: 15.125rem;
+    min-height: 15.125rem;
+    line-height: 15.125rem;
+    font-size: 2rem;
+  }
+}
+
 @media (min-width: 64em) {
   .home-btn {
     margin: 0;
     padding: 0;
-    width: 17.125rem;
-    height: 17.125rem;
+    min-width: 17.125rem;
+    min-height: 17.125rem;
     line-height: 17.125rem;
     font-size: 2rem;
   }

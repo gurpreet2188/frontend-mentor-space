@@ -8,6 +8,11 @@
     margin:auto;
     padding-top: 3rem;
 
+    @include breakpoint-up(medium) {
+        padding-top: 15%;
+        gap: calc(100vh / 11);
+    }
+
     @include breakpoint-up(large) {
         flex-direction: row;
         align-items: flex-end;
@@ -26,6 +31,10 @@
         padding-bottom: 2rem;
 
         @include breakpoint-up(medium) {
+            width: 57%;
+            gap: 4rem;
+        }
+        @include breakpoint-up(large) {
             width: 38%;
             gap: 4rem;
             padding-bottom: 0;
@@ -45,8 +54,12 @@
         font-size: 5rem;
         line-height: 6.25rem;
 
-        @include breakpoint-up(large) {
+        @include breakpoint-up(medium) {
             font-size: $font-xl;
+        }
+
+        @include breakpoint-up(large) {
+            max-width: 100%;
         }
     }
 
@@ -68,13 +81,20 @@
         text-decoration: none;
         text-align: center;
         line-height: 9.375rem;
+
+        @include breakpoint-up(medium) {
+            min-width: 15.125rem;
+            min-height: 15.125rem;
+            line-height: 15.125rem;
+            font-size: $font-sm;
+        }
         
         
         @include breakpoint-up(large) {
             margin: 0;
             padding: 0;
-            width: 17.125rem;
-            height: 17.125rem;
+            min-width: 17.125rem;
+            min-height: 17.125rem;
             line-height: 17.125rem;
             font-size: $font-sm;
         }

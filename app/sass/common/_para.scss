@@ -11,6 +11,11 @@
         line-height: 1.5625rem;
         text-align: center;
 
+        @include breakpoint-up(medium){
+            font-size: $font-subheading-m;
+            line-height: 1.75rem;
+        }
+
         @include breakpoint-up(large) {
             text-align: left;
             font-size: $font-body;
