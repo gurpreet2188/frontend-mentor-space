@@ -60,21 +60,23 @@
         order: 2;
         background-color: $white;
         border-radius: 50%;
-        width: 9.375rem;
-        height: 9.375rem;
+        min-width: 9.375rem;
+        min-height: 9.375rem;
         @extend .common-title;
         color: #0B0D17;
-        font-size: $font-sm;
+        font-size: 1.25rem;
         text-decoration: none;
         text-align: center;
-
-
+        line-height: 9.375rem;
+        
+        
         @include breakpoint-up(large) {
             margin: 0;
             padding: 0;
             width: 17.125rem;
             height: 17.125rem;
-            line-height: 17rem;
+            line-height: 17.125rem;
+            font-size: $font-sm;
         }
     }
 
