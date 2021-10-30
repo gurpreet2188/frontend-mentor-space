@@ -1045,8 +1045,7 @@ h1, h2, h3, h4 {
 
 .navpanel {
   opacity: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  overflow: hidden;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1058,7 +1057,7 @@ h1, h2, h3, h4 {
   gap: 2rem;
   z-index: 4;
   height: 100%;
-  min-width: 15.875rem;
+  width: 15.875rem;
   background-color: rgba(0, 0, 0, 0.3);
   margin-left: auto;
   right: 0;
@@ -1196,26 +1195,22 @@ h1, h2, h3, h4 {
 @-webkit-keyframes openPanel {
   0% {
     opacity: 0.5;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    width: 0rem;
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    width: 15.875rem;
   }
 }
 
 @keyframes openPanel {
   0% {
     opacity: 0.5;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    width: 0rem;
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    width: 15.875rem;
   }
 }
 
@@ -1224,34 +1219,29 @@ h1, h2, h3, h4 {
     -webkit-animation: openPanel .5s;
             animation: openPanel .5s;
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    width: 15.875rem;
   }
 }
 
 @-webkit-keyframes closePanel {
   0% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    width: 15.875rem;
   }
   100% {
     opacity: 0.5;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    width: 0rem;
   }
 }
 
 @keyframes closePanel {
   0% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    width: 15.875rem;
   }
   100% {
     opacity: 0.5;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    width: 0rem;
   }
 }
 
@@ -1260,8 +1250,7 @@ h1, h2, h3, h4 {
     -webkit-animation: closePanel .3s;
             animation: closePanel .3s;
     opacity: 0;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    width: 0rem;
   }
 }
 

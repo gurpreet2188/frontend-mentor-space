@@ -1,12 +1,12 @@
 @keyframes openPanel {
   0% {
         opacity: 0.5;
-      transform: translateX(100%);
+        width: 0rem;
   }
   
   100% {
     opacity: 1;
-    transform: translateX(0);
+    width: 15.875rem;
   }
 }
 
@@ -14,18 +14,18 @@
     @include breakpoint-down (small) {
         animation: openPanel .5s;
         opacity: 1;
-        transform: translateX(0);
+        width: 15.875rem;
     }
 }
 
 @keyframes closePanel {
     0% {
         opacity: 1;
-        transform: translateX(0);
+        width: 15.875rem;
     }
     100% {
         opacity: 0.5;
-        transform: translateX(100%);
+        width: 0rem;
     }
 }
 
@@ -34,6 +34,7 @@
     @include breakpoint-down(small){
         animation: closePanel .3s;
         opacity: 0;
-        transform: translateX(100%);
+        width: 0rem;
+      
     }
 }
