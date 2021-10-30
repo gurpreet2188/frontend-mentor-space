@@ -2,17 +2,17 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    height: 50vh;
     overflow-x: hidden;
-    height: 80vh;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Bellefair', serif;
 }
 
-h5, p {
-    font-family: 'Barlow Condensed', sans-serif;
-}
+// h5, p {
+//     font-family: 'Barlow Condensed', sans-serif;
+// }
 
 .active {
     opacity: 1;

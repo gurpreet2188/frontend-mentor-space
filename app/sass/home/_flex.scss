@@ -1,0 +1,50 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 84%;
+    margin:auto;
+    padding-top: 3rem;
+    &-text {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.1rem;
+        padding-bottom: 2rem;
+    }
+
+    &-header {
+        flex: 1;
+        order: 1;
+        @extend .common-header;
+    }
+
+    &-title {
+        flex: 1;
+        order: 2;
+        @extend .common-title;
+        font-size: 5rem;
+        line-height: 6.25rem;
+    }
+
+    &-para {
+        flex: 1;
+        order: 3;
+        @extend .common-para;
+    }
+
+    &-btn {
+        order: 2;
+        background-color: $white;
+        border-radius: 50%;
+        width: 9.375rem;
+        height: 9.375rem;
+        text-decoration: none;
+        text-align: center;
+    }
+
+}

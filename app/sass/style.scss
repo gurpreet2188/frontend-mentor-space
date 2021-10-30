@@ -22,7 +22,13 @@
 @import './common/bg';
 @import './common/navbar';
 @import "./common/navpanel";
+@import './common/header';
+@import './common/title';
+@import './common/para';
 
 @import './animations/panel';
 @import './animations/menu';
 @import './animations/states';
+
+@import './home/flex';
+// @import './home/btn';

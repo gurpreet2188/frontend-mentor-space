@@ -1,0 +1,14 @@
+.common{
+    p {
+        font-family: 'Barlow', sans-serif;
+    }
+    &-para {
+        margin: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.9375rem;
+        color: $blueish;
+        line-height: 1.5625rem;
+        text-align: center;
+    }
+}

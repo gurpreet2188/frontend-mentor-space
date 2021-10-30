@@ -1,0 +1,12 @@
+.common {
+    &-header {
+        margin: 0;
+        font-family: Barlow Condensed;
+        font-size: $font-subheading-m;
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 2.7px;
+        text-transform: uppercase;
+        color: $blueish;
+    }
+}

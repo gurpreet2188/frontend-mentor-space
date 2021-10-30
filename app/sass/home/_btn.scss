@@ -1,0 +1,10 @@
+.home {
+    &-btn {
+        // flex: 1;
+        // order: 4;
+        background-color: $white;
+        border-radius: 50%;
+        min-width: 9.375rem;
+        min-height: 9.375rem;
+    }
+}

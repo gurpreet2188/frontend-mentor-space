@@ -28,7 +28,7 @@ function panelItems(type) {
         navpanel.classList.remove('open');
         navpanel.classList.add('close');
         break
-      
+        
     case 'm-open':
         menuBtn.classList.remove('menu-close')
         menuBtn.classList.add('menu-open')

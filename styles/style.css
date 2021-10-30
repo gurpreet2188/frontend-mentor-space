@@ -3,16 +3,12 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  height: 50vh;
   overflow-x: hidden;
-  height: 80vh;
 }
 
 h1, h2, h3, h4 {
   font-family: 'Bellefair', serif;
-}
-
-h5, p {
-  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .active {
@@ -1061,7 +1057,7 @@ h5, p {
           flex-direction: column;
   gap: 2rem;
   z-index: 4;
-  height: 100vh;
+  height: 100%;
   min-width: 15.875rem;
   background-color: rgba(0, 0, 0, 0.3);
   margin-left: auto;
@@ -1162,6 +1158,39 @@ h5, p {
     padding: 0;
     margin-left: 10%;
   }
+}
+
+.common-header, .home-header {
+  margin: 0;
+  font-family: Barlow Condensed;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  color: #D0D6F9;
+}
+
+.common-title, .home-title {
+  margin: 0;
+  font-family: Bellefair;
+  font-style: normal;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+
+.common p {
+  font-family: 'Barlow', sans-serif;
+}
+
+.common-para, .home-para {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.9375rem;
+  color: #D0D6F9;
+  line-height: 1.5625rem;
+  text-align: center;
 }
 
 @-webkit-keyframes openPanel {
@@ -1471,4 +1500,86 @@ h5, p {
     opacity: 1;
     border-bottom: 3px solid #FFFFFF;
   }
+}
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+  width: 84%;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.home-text {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.1rem;
+  padding-bottom: 2rem;
+}
+
+.home-header {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.home-title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  font-size: 5rem;
+  line-height: 6.25rem;
+}
+
+.home-para {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.home-btn {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  width: 9.375rem;
+  height: 9.375rem;
+  text-decoration: none;
+  text-align: center;
 }
