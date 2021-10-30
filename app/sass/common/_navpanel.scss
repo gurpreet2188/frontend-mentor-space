@@ -8,10 +8,11 @@
     z-index: 4;
     height: 100%;
     width: 15.875rem;
-    background-color: rgba($color: #000, $alpha: .3); //fallback
+    background-color: rgba($color: #000, $alpha: .3);
     margin-left: auto;
     right: 0;
     top: 0;
+    white-space: nowrap;
 
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
           -webkit-backdrop-filter: blur(10px);
@@ -22,10 +23,22 @@
         background-color: rgba($color: #000, $alpha: .9);
     }
 
+    @include breakpoint-up(medium) {
+        
+        position: relative;
+        opacity: 1;
+        flex-direction: row;
+        height: 6rem;
+        width: 60vw;
+        top: 0rem;
+        margin-left: auto;
+        gap: 3rem;
+
+    }
+
     @include breakpoint-up(large) {
         z-index: 7;
         position: relative;
-        transform: none;
         opacity: 1;
         flex-direction: row;
         height: 6rem;
@@ -67,20 +80,43 @@
             word-spacing: .7rem;
 
             @include breakpoint-up(large) {
-                padding-top: 2.6rem;
                 margin-left: 0;
                 word-spacing: .5rem;
                 letter-spacing: 2.7px;
             }
         }
 
+        @include breakpoint-up(medium) {
+            flex-direction: row;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
         @include breakpoint-up(large) {
             flex-direction: row;
             gap: 1.8rem;
             margin: 0;
             padding: 0;
             margin-left: 10%;
+            justify-content: flex-start;
         }
+
+        span {
+            margin: 0;
+            @extend .common-para;
+            font-weight: bold;
+            @include breakpoint-up(medium) {
+                display: none;
+            }
+
+            @include breakpoint-up(large) {
+                display: inline;
+            }
+
+        }
+
+        
    }
 
 }

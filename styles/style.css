@@ -724,12 +724,14 @@ h1, h2, h3, h4 {
 .bg-home {
   background: url("../assets/home/background-home-mobile.jpg") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (min-width: 40em) {
   .bg-home {
     background: url("../assets/home/background-home-tablet.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -737,18 +739,21 @@ h1, h2, h3, h4 {
   .bg-home {
     background: url("../assets/home/background-home-desktop.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
 .bg-destination {
   background: url("../assets/destination/background-destination-mobile.jpg") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (min-width: 40em) {
   .bg-destination {
     background: url("../assets/destination/background-destination-tablet.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -756,6 +761,7 @@ h1, h2, h3, h4 {
   .bg-destination {
     background: url("../assets/destination/background-destination-desktop.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -763,12 +769,14 @@ h1, h2, h3, h4 {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../assets/crew/background-crew-mobile.jpg") no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/crew/background-crew-mobile.jpg") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (min-width: 40em) {
   .bg-crew {
     background: url("../assets/crew/background-crew-tablet.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -776,6 +784,7 @@ h1, h2, h3, h4 {
   .bg-crew {
     background: url("../assets/crew/background-crew-desktop.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -783,12 +792,14 @@ h1, h2, h3, h4 {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../assets/technology/background-technology-mobile.jpg") no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/technology/background-technology-mobile.jpg") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (min-width: 40em) {
   .bg-tech {
     background: url("../assets/technology/background-technology-tablet.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -796,6 +807,7 @@ h1, h2, h3, h4 {
   .bg-tech {
     background: url("../assets/technology/background-technology-desktop.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -813,7 +825,7 @@ h1, h2, h3, h4 {
   margin: 1.5rem auto auto auto;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 40em) {
   .navbar {
     position: absolute;
     z-index: -1;
@@ -840,7 +852,7 @@ h1, h2, h3, h4 {
           align-items: flex-start;
 }
 
-@media (min-width: 64em) {
+@media (min-width: null) {
   .navbar-logo {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -892,7 +904,7 @@ h1, h2, h3, h4 {
   top: 30px;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 40em) {
   .navbar-menu {
     display: none;
   }
@@ -917,6 +929,7 @@ h1, h2, h3, h4 {
   margin-left: auto;
   right: 0;
   top: 0;
+  white-space: nowrap;
 }
 
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
@@ -932,12 +945,26 @@ h1, h2, h3, h4 {
   }
 }
 
+@media (min-width: 40em) {
+  .navpanel {
+    position: relative;
+    opacity: 1;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 6rem;
+    width: 60vw;
+    top: 0rem;
+    margin-left: auto;
+    gap: 3rem;
+  }
+}
+
 @media (min-width: 64em) {
   .navpanel {
     z-index: 7;
     position: relative;
-    -webkit-transform: none;
-            transform: none;
     opacity: 1;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -994,10 +1021,24 @@ h1, h2, h3, h4 {
 
 @media (min-width: 64em) {
   .navpanel-text a {
-    padding-top: 2.6rem;
     margin-left: 0;
     word-spacing: .5rem;
     letter-spacing: 2.7px;
+  }
+}
+
+@media (min-width: 40em) {
+  .navpanel-text {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -1011,6 +1052,26 @@ h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     margin-left: 10%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.navpanel-text span {
+  margin: 0;
+  font-weight: bold;
+}
+
+@media (min-width: 40em) {
+  .navpanel-text span {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .navpanel-text span {
+    display: inline;
   }
 }
 
@@ -1045,7 +1106,7 @@ h1, h2, h3, h4 {
   font-family: 'Barlow', sans-serif;
 }
 
-.common-para, .home-para {
+.common-para, .navpanel-text span, .home-para {
   margin: 0;
   font-style: normal;
   font-weight: normal;
@@ -1056,7 +1117,7 @@ h1, h2, h3, h4 {
 }
 
 @media (min-width: 64em) {
-  .common-para, .home-para {
+  .common-para, .navpanel-text span, .home-para {
     text-align: left;
     font-size: 1.125rem;
     line-height: 2rem;
@@ -1346,10 +1407,10 @@ h1, h2, h3, h4 {
   border-right: 3px solid #FFFFFF;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 40em) {
   .state-active::after {
     position: relative;
-    padding-top: 2rem;
+    top: 1.9rem;
     height: 0;
     border-right: none;
     padding-left: 0;
