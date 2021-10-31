@@ -12,7 +12,6 @@
     margin-left: auto;
     right: 0;
     top: 0;
-    white-space: nowrap;
 
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
           -webkit-backdrop-filter: blur(10px);

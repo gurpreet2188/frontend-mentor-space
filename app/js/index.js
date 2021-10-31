@@ -171,18 +171,29 @@ function destinationArea() {
 
   // main div
   const desDiv = document.createElement("div");
-  desDiv.classList.add("main");
+  desDiv.classList.add("destination");
   dynamicArea.appendChild(desDiv);
 
+  //first half
+  const fh = document.createElement("div")
+  fh.classList.add("destination-fh")
+  desDiv.appendChild(fh)
+
   // header
-  pageLayout.setHeader("01 Pick your destination", desDiv, "main-header");
+  pageLayout.setHeader("01 Pick your destination", fh, "destination-fh-header");
 
   // image
-  pageLayout.setImage("main-image", desDiv);
+  pageLayout.setImage("destination-fh-image", fh);
 
-  // names
+
+  // second-half
+  const sh = document.createElement("div")
+  sh.classList.add("destination-sh")
+  desDiv.appendChild(sh)
+
+  // options
   const namesDiv = document.createElement("div");
-  namesDiv.classList.add("main-names");
+  namesDiv.classList.add("destination-sh-options");
   const moon = document.createElement("a");
   const mars = document.createElement("a");
   const europa = document.createElement("a");
@@ -190,9 +201,9 @@ function destinationArea() {
 
   const clsNames = [moon, mars, europa, titan];
 
-  mars.classList.add("inactive");
-  europa.classList.add("inactive");
-  titan.classList.add("inactive");
+  mars.classList.add("options-inactive");
+  europa.classList.add("options-inactive");
+  titan.classList.add("options-inactive");
   moon.href = "#";
   mars.href = "#";
   europa.href = "#";
@@ -206,40 +217,56 @@ function destinationArea() {
   namesDiv.appendChild(mars);
   namesDiv.appendChild(europa);
   namesDiv.appendChild(titan);
-  desDiv.appendChild(namesDiv);
+  sh.appendChild(namesDiv);
 
   // title
-  pageLayout.setTitle("main-title", desDiv);
+  pageLayout.setTitle("destination-sh-title", sh);
 
   // body text
-  pageLayout.setPara("main-body", desDiv);
-
+  pageLayout.setPara("destination-sh-para", sh);
+  
   //divider
   const divider = document.createElement("span");
-  divider.classList.add("main-divider");
-  desDiv.appendChild(divider);
+  divider.classList.add("destination-sh-divider");
+  sh.appendChild(divider);
+  
+  //footer
+  const footer = document.createElement('div')
+  sh.appendChild(footer)
+  footer.classList.add("destination-sh-footer")
 
+  //footer-text
+  const footerDistance = document.createElement('div')
+  footer.appendChild(footerDistance)
+  footerDistance.classList.add("destination-sh-footer-distance")
+  
   // p
   const avgDist = document.createElement("p");
   avgDist.appendChild(aText("AVG. DISTANCE"));
-  avgDist.classList.add("main-avg");
-  desDiv.appendChild(avgDist);
-
+  avgDist.classList.add("destination-sh-footer-distance-text");
+  footerDistance.appendChild(avgDist);
+  
   // h2
   const km = document.createElement("h2");
-  km.classList.add("main-km");
-  desDiv.appendChild(km);
+  km.classList.add("destination-sh-footer-distance-units");
+  footerDistance.appendChild(km);
+  
+  //footer-text
+  const footerTime = document.createElement('div')
+  footer.appendChild(footerTime)
+  footerTime.classList.add("destination-sh-footer-time")
 
   //p
   const est = document.createElement("p");
   est.appendChild(aText("EST. Travel Time"));
-  est.classList.add("main-est");
-  desDiv.appendChild(est);
-
+  est.classList.add("destination-sh-footer-time-text");
+  footerTime.appendChild(est);
+  
   // h2
   const time = document.createElement("h2");
-  time.classList.add("main-time");
-  desDiv.appendChild(time);
+  time.classList.add("destination-sh-footer-time-units");
+  footerTime.appendChild(time);
+  
 
   loadData(
     "dest",
@@ -487,11 +514,11 @@ function buttonHandle(
     switch (type) {
       case "dest":
         for (d in clsNames) {
-          if (!clsNames[d].classList.contains("inactive")) {
-            clsNames[d].classList.add("inactive");
+          if (!clsNames[d].classList.contains("options-inactive")) {
+            clsNames[d].classList.add("options-inactive");
           }
         }
-        btn.classList.remove("inactive");
+        btn.classList.remove("options-inactive");
         setTimeout(removeData(title, bodyText, km, time), 100);
         setTimeout(loadData("dest", image, title, bodyText, km, time, i), 300);
         break

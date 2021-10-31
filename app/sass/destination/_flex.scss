@@ -1,0 +1,222 @@
+.destination {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 81%;
+    margin: 1.7rem auto 0 auto;
+    overflow: hidden;
+
+    @include breakpoint-up(medium) {
+       
+    }
+
+    @include breakpoint-up(large){
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 8rem auto 0 auto;
+        gap: 12rem;
+    }
+    
+
+    &-fh {
+        order: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoint-up(medium) {
+            gap: 3rem;
+        }
+
+        @include breakpoint-up(large){
+            gap: 6rem;
+        }
+        
+
+        &-header {
+            order: 1;
+            @extend .common-header;
+
+            @include breakpoint-up(medium) {
+                align-self: flex-start;
+            }
+
+        }
+        &-image {
+            order: 2;
+            min-width: 10.625rem;
+            min-height: 10.625rem;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @include breakpoint-up(medium) {
+                min-width: 18.75rem;
+                min-height: 18.75rem;
+                align-self: center;
+            }
+
+            @include breakpoint-up(large){
+                min-width: 27.8125rem;
+                min-height: 27.8125rem;
+            }
+
+
+        }
+    }
+
+    &-sh {
+        order: 2;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+        @include breakpoint-up(medium) {
+            gap: 1.5rem;
+        }
+
+        @include breakpoint-up(large){
+            align-self: flex-end;
+            justify-content: flex-end;
+            align-items: flex-start;
+            gap: 1.5rem;
+            // margin-top: 6%;
+            text-align: left;
+        }
+
+        &-options {
+
+            a {
+                @extend .common-para;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $white;
+                font-family: 'Barlow Condensed', sans-serif;
+                letter-spacing: 2.7px;
+
+                &:not(:last-child) {
+                    margin-right: 1.5rem;
+                }
+
+                @include breakpoint-up(large){
+                    font-size: $font-subheading-m;
+
+                    &:not(:last-child) {
+                        margin-right: 2.1rem;
+                    }
+
+                }
+                
+            }
+
+        }
+
+        &-title {
+            @extend .common-title;
+            font-size: $font-m;
+            text-transform: uppercase;
+            line-height: 4rem;
+
+            @include breakpoint-up(medium) {
+                font-size: 5rem;
+            }
+
+            @include breakpoint-up(large) {
+                font-size: $font-l;
+            }
+
+        }
+
+        &-para {
+            @extend .common-para;
+
+            @include breakpoint-up(medium) {
+                width: 84%;
+            }
+
+            @include breakpoint-up(large) {
+                width: 95%;
+                height: 8rem;
+            }
+
+        }
+
+        &-divider {
+            // order: 3;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            height: 1px;
+            width: 100%;
+            background-color: rgba($color: #999, $alpha: .3);
+
+            @include breakpoint-up(large) {
+                margin-top: 2rem;
+                width: 82%
+            }
+
+        }
+
+        &-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            text-transform: uppercase;
+            text-align: center;
+
+            @include breakpoint-up(medium) {
+                flex-direction: row;
+                gap: 6rem;
+            }
+            @include breakpoint-up(large) {
+                text-align: left;
+            }
+            &-distance{
+                order: 1;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                &-text{
+                    @extend .common-para;
+                    font-family: 'Barlow Condensed', sans-serif;
+                    letter-spacing: 2.3625px;
+                    @include breakpoint-up(medium) {
+                        font-size: 0.875rem;
+                    }
+
+                }
+
+                &-units {
+                    @extend .common-title;
+                    font-size: $font-xsm;
+
+                }
+
+            }
+
+            &-time {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                &-text{
+                    @extend .common-para;
+                    font-family: 'Barlow Condensed', sans-serif;
+                    letter-spacing: 2.3625px
+                }
+
+                &-units {
+                    @extend .common-title;
+                    font-size: $font-xsm;
+                }
+
+            }
+        }
+    }
+
+}

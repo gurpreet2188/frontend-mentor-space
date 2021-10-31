@@ -1,0 +1,19 @@
+@keyframes Active {
+    0% {opacity: .5;}
+    100%{opacity: 1;}
+}
+
+@keyframes Inactive {
+    0% {opacity: 1;}
+    100%{opacity: .5;}
+}
+
+.options-active {
+    animation: Active 1s;
+    opacity: 1;
+}
+
+.options-inactive {
+    animation: Inactive 1s;
+    opacity: .5;
+}
