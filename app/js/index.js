@@ -1,6 +1,7 @@
 const menuBtn = document.querySelector(".navbar-menu");
 const closeBtn = document.querySelector(".navpanel-close");
 const navpanel = document.querySelector(".navpanel");
+const exploreBtn = document.querySelector(".home-explore-btn")
 const body = document.querySelector("body");
 const dynamicArea = document.querySelector(".dynamic-area");
 const home = document.querySelector(".navpanel-text-home");
@@ -45,6 +46,43 @@ function panelItems(type) {
       }
   }
 }
+
+function explore() {
+    const exploreDest = () => {
+      dynamicArea.innerHTML = "";
+      destinationArea();
+      // panelItems('m-close')
+      panelItems('btn-state')
+      destination.classList.add('state-active')
+    }
+    const exploreCrew = () =>{
+      dynamicArea.innerHTML = "";
+      crewArea()
+      // panelItems('m-close')
+      panelItems('btn-state')
+      crew.classList.add('state-active')
+    }
+    const exploreTech = () =>{
+      dynamicArea.innerHTML = "";
+      techArea();
+      // panelItems('m-close')
+      panelItems('btn-state')
+      technology.classList.add('state-active')
+    }
+
+    
+    exploreBtn.addEventListener("click", (e) => {
+      let randNum = Math.floor(Math.random() * 3);
+      console.log(randNum)
+      if(randNum === 0) {exploreDest()}
+      if(randNum === 1) {exploreCrew()}
+      if(randNum === 2) {exploreTech()}
+
+    })
+
+}
+
+explore()
 
 function panel() {
 
@@ -204,9 +242,10 @@ function destinationArea() {
 
   const clsNames = [moon, mars, europa, titan];
 
-  mars.classList.add("options-inactive");
-  europa.classList.add("options-inactive");
-  titan.classList.add("options-inactive");
+  moon.classList.add("options-active", "options-hover");
+  mars.classList.add("options-inactive","options-hover");
+  europa.classList.add("options-inactive", "options-hover");
+  titan.classList.add("options-inactive", "options-hover");
   moon.href = "#";
   mars.href = "#";
   europa.href = "#";
@@ -371,8 +410,8 @@ function crewArea() {
     sliderDiv.appendChild(scArr[i]);
     scArr[i].classList.add("crew-fh-options-circle");
     if (scArr[i] !== sc0) {
-      scArr[i].classList.add("inactive");
-    }
+      scArr[i].classList.add("dots-hover", "dots-inactive");
+    }else {scArr[i].classList.add("dots-hover", "dots-active");}
   }
 
   //subhead
@@ -558,11 +597,11 @@ function buttonHandle(
     switch (type) {
       case "dest":
         for (d in clsNames) {
-          if (!clsNames[d].classList.contains("options-inactive")) {
-            clsNames[d].classList.add("options-inactive");
+          if (clsNames[d].classList.contains("options-active")) {
+            clsNames[d].classList.replace("options-active", "options-inactive");
           }
         }
-        btn.classList.remove("options-inactive");
+        btn.classList.replace("options-inactive", "options-active")
         removeData(title, bodyText, km, time)
         loadData("dest", image, title, bodyText, km, time, i);
         break
@@ -580,7 +619,7 @@ function buttonHandle(
         loadData("crew", image, title, bodyText, km, time, i);
         addAnimation(time, image, title, bodyText)
         console.log(currentSlide)
-        setTimeout(() => { removeCls(time, image, title, bodyText) }, 1100)
+        setTimeout(() => { removeCls(time, image, title, bodyText) }, 400)
         break
       case "tech":
         for (t in clsNames) {
@@ -589,8 +628,11 @@ function buttonHandle(
           }
         }
         btn.classList.replace("btnoff", "btnon")
+        removeAnimation(time, image, title, bodyText)
         removeTech(title, bodyText)
         loadData("tech", image, title, bodyText, km, time, i)
+        addAnimation(time, image, title, bodyText)
+        setTimeout(() => { removeCls(time, image, title, bodyText) }, 400)
         break
     }
   });
@@ -657,7 +699,7 @@ function swipe(elm, title, bodyText, time, arr) {
     if (Math.abs(dX) > Math.abs(dY)) {
       console.log(currentSlide)
 
-      if (dX > 0) {
+      if (dX < 0) {
         if (currentSlide >= 0 && currentSlide <= 2) {
           currentSlide++
         } else {

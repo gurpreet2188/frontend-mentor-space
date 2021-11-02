@@ -67,9 +67,13 @@
         flex: 1;
         order: 3;
         @extend .common-para;
+
+        @include breakpoint-up(large){
+            width: calc(100vw / 3.5);
+        }
     }
 
-    &-btn {
+    &-explore-btn {
         order: 2;
         background-color: $white;
         border-radius: 50%;
@@ -97,7 +101,11 @@
             min-height: 17.125rem;
             line-height: 17.125rem;
             font-size: $font-sm;
+
+            
         }
+
+        
     }
 
 }

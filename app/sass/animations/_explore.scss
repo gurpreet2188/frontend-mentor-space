@@ -1,0 +1,12 @@
+@keyframes Hover {
+    0%{box-shadow: 0 0 0 0px rgba($color: #fff, $alpha: .3);}
+    100%{box-shadow: 0 0 0 90px rgba($color: #fff, $alpha: .3);}
+}
+
+.explore-hover {
+
+    &:hover{
+        animation: Hover 1s;
+        box-shadow: 0 0 0 90px rgba($color: #fff, $alpha: .3);
+    }
+}

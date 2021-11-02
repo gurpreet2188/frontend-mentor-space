@@ -117,13 +117,14 @@
 
             @include breakpoint-up(medium) {
                 order:2;
-                flex: 1;
+                // flex: 1;
                 font-size: 1.5rem;
                 opacity: .4;
             }
 
             @include breakpoint-up(large) {
                 order: 2;
+                // flex: 1;
                 font-size: $font-sm;
                 opacity: .4;
                

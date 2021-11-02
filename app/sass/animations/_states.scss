@@ -3,6 +3,44 @@
     100% {opacity: 1;}
 }
 
+@keyframes Inactive {
+    0% {opacity: 1;}
+    100%{opacity: .5;}
+}
+
+.options-active {
+    animation: Active 1s;
+    opacity: 1;
+    border-bottom: 3px solid rgba($color: #fff, $alpha: 1);
+}
+
+.options-inactive {
+    animation: Inactive 1s;
+    opacity: .5;
+}
+
+.options-hover {
+    &:hover {
+            border-bottom: 3px solid rgba($color: #fff, $alpha: .5);
+    }
+}
+
+.dots-active {
+    animation: Active 1s;
+}
+
+.dots-inactive {
+    animation: InActive 1s;
+    opacity: .5;
+}
+
+.dots-hover {
+    &:hover {
+        opacity: .8;
+    }
+}
+
+
 .state {
     &-active::after {
         content: "";
@@ -12,17 +50,38 @@
         right: 0;
         transform: translateY(-20%);
         border-right: 3px solid $white;
+        animation: Active 1s;
         @include breakpoint-up(medium) {
             position: relative;
             top: 1.9rem;
             height: 0;
             border-right: none;
             padding-left: 0;
+            margin-top: -3px;
             display: block;
-            animation: Active 1s;
+            
             width: 100%;
             opacity: 1;
             border-bottom: 3px solid $white;
         }
+    }
+}
+
+.state-hover {
+    &:hover {
+
+        &::after {
+            content: "";
+            position: relative;
+            top: 1.9rem;
+            height: 0;
+            padding-left: 0;
+            margin-top: -3px;
+            display: block;
+            width: 100%;
+            animation: Active 1s;
+            border-bottom: 3px solid rgba($color: #fff, $alpha: .2);
+        }
+        
     }
 }

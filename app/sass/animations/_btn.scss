@@ -1,11 +1,15 @@
 @keyframes BtnOn {
-    0%{background-color: #000;}
-    50%{background-color: #777;}
-    100%{background-color: #fff;}
+    0%{background-color: #000;
+        color: #fff;
+    }
+    // 50%{background-color: #777;}
+    100%{background-color: #fff;
+        color: #000;
+    }
 }
 
 .btnon {
-    animation: BtnOn .3s;
+    animation: BtnOn .4s;
     background-color: #fff;
     color: #000;
 }
@@ -17,7 +21,11 @@
 }
 
 .btnoff {
-    animation: BtnOff .3s;
+    animation: BtnOff .4s;
     background-color: #000;
     color: #fff;
+    border: 1px solid rgba($color: #fff, $alpha: .5);
+    &:hover {
+        border: 1px solid rgba($color: #fff, $alpha: 1);
+    }
 }
