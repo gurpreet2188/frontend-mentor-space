@@ -450,22 +450,38 @@ function techArea() {
   body.className = "";
   body.classList.add("bg-tech");
   const techDiv = document.createElement("div");
-  techDiv.classList.add("main");
+  techDiv.classList.add("technology");
 
   dynamicArea.style.position = "relative"
   dynamicArea.style.bottom = "auto"
   dynamicArea.appendChild(techDiv);
 
+  const fh = document.createElement('div')
+  techDiv.appendChild(fh)
+  fh.classList.add('technology-fh')
+
+  const sh = document.createElement('div')
+  techDiv.appendChild(sh)
+  sh.classList.add('technology-sh')
+
   //header
-  pageLayout.setHeader("03 SPACE LAUNCH 101", techDiv, "main-header")
+  pageLayout.setHeader("03 SPACE LAUNCH 101", fh, "technology-fh-header")
 
   //image
-  pageLayout.setImage('main-image-tech', techDiv)
+  if(size.matches) {
+    pageLayout.setImage('technology-sh-image', sh)
+  } else {
+    pageLayout.setImage('technology-fh-image', fh)
+  }
+
+  const ot = document.createElement('div')
+  fh.appendChild(ot)
+  ot.classList.add('technology-fh-ot')
 
   //buttons
   const btnDiv = document.createElement('div')
-  techDiv.appendChild(btnDiv)
-  btnDiv.classList.add('main-tech')
+  ot.appendChild(btnDiv)
+  btnDiv.classList.add('technology-fh-ot-options')
 
   const btn0 = document.createElement('a')
   const btn1 = document.createElement('a')
@@ -476,27 +492,33 @@ function techArea() {
   for (i in btnArr) {
     btnArr[i].href = "#";
     btnDiv.appendChild(btnArr[i]);
-    btnArr[i].classList.add("main-tech-btn");
+    btnArr[i].classList.add("technology-fh-ot-options-btn");
     if (btnArr[i] !== btn0) {
-      btnArr[i].classList.add('btn-off')
+      btnArr[i].classList.add('btnoff')
+    }else {
+      btnArr[i].classList.add('btnon')
     }
   }
   btn0.appendChild(aText('1'))
   btn1.appendChild(aText('2'))
   btn2.appendChild(aText('3'))
 
+  const text = document.createElement('div')
+  ot.appendChild(text)
+  text.classList.add('technology-fh-ot-text')
+
   // text
   const txt = document.createElement('p')
-  const pText = document.createTextNode('THE TERMINOLOGY...')
+  const pText = document.createTextNode('THE TERMINOLOGY')
   txt.appendChild(pText)
-  techDiv.appendChild(txt)
+  text.appendChild(txt)
 
   //sub head
-  txt.classList.add('main-subhead-tech')
+  txt.classList.add('technology-fh-ot-text-subheader')
   //title
-  pageLayout.setTitle('main-title-tech', techDiv)
+  pageLayout.setTitle('technology-fh-ot-text-title', text)
   //para
-  pageLayout.setPara('main-body-tech', techDiv)
+  pageLayout.setPara('technology-fh-ot-text-para', text)
 
   // set default
   loadData(
@@ -562,11 +584,11 @@ function buttonHandle(
         break
       case "tech":
         for (t in clsNames) {
-          if (!clsNames[t].classList.contains("btn-off")) {
-            clsNames[t].classList.add("btn-off");
+          if (clsNames[t].classList.contains("btnon")) {
+            clsNames[t].classList.replace("btnon", "btnoff");
           }
         }
-        btn.classList.remove("btn-off")
+        btn.classList.replace("btnoff", "btnon")
         removeTech(title, bodyText)
         loadData("tech", image, title, bodyText, km, time, i)
         break

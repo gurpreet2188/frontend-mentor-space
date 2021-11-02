@@ -1,0 +1,23 @@
+@keyframes BtnOn {
+    0%{background-color: #000;}
+    50%{background-color: #777;}
+    100%{background-color: #fff;}
+}
+
+.btnon {
+    animation: BtnOn .3s;
+    background-color: #fff;
+    color: #000;
+}
+
+@keyframes BtnOff {
+    0%{background-color: #fff;}
+    50%{background-color: #777;}
+    100%{background-color: #000;}
+}
+
+.btnoff {
+    animation: BtnOff .3s;
+    background-color: #000;
+    color: #fff;
+}
