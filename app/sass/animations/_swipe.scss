@@ -1,0 +1,77 @@
+@keyframes SwipeLeftRemove {
+    0%{ transform:  translateX(0%);
+        opacity: 1;
+    }
+    100%{ transform:  translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes SwipeRightRemove {
+    0%{ transform:  translateX(0%);
+        opacity: 1;
+    }
+    100%{ transform:  translateX(100%);
+        opacity: 0;
+    }
+}
+
+.swipe-left-remove {
+    animation: SwipeLeftRemove .3s;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.swipe-right-remove {
+    animation: SwipeRightRemove .3s;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+@keyframes SwipeRightAdd {
+    0%{ transform:  translateX(-100%);
+        opacity: 0;
+    }
+    100%{ transform:  translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes SwipeLeftAdd {
+    0%{ transform:  translateX(100%);
+        opacity: 0;
+    }
+    100%{ transform:  translateX(0%);
+        opacity: 1;
+    }
+    
+}
+
+.swipe-left-add {
+    animation: SwipeLeftAdd .3s;
+}
+
+.swipe-right-add {
+    animation: SwipeRightAdd .3s;
+}
+
+
+
+
+@keyframes ItemRemove {
+    0%{ opacity: 1;}
+    100%{ opacity: 0;}
+}
+
+.item-remove {
+    animation: ItemRemove 1s;
+}
+
+@keyframes ItemAdd {
+    0%{ opacity: 0;}
+    100%{ opacity: 1;}
+}
+
+.item-add {
+    animation: ItemAdd 1s;
+}
