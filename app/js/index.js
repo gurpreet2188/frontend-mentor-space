@@ -617,12 +617,12 @@ function buttonHandle(
         break
       case "crew":
         // console.log(currentSlide)
-        for (c in clsNames) {
-          if (!clsNames[c].classList.contains("inactive")) {
-            clsNames[c].classList.add("inactive");
+        for (d in clsNames) {
+          if (clsNames[d].classList.contains("dots-active")) {
+            clsNames[d].classList.replace("dots-active", "dots-inactive");
           }
         }
-        btn.classList.remove("inactive");
+        btn.classList.replace("dots-inactive", "dots-active")
         currentSlide = i
         removeAnimation(time, image, title, bodyText)
         removeCrew(title, bodyText, time);
@@ -712,12 +712,12 @@ function swipe(elm, title, bodyText, time, arr) {
         } else {
           currentSlide = 0
         }
-        for (c in arr) {
-          if (!arr[c].classList.contains("inactive")) {
-            arr[c].classList.add("inactive");
+        for (d in arr) {
+          if (arr[d].classList.contains("dots-active")) {
+            arr[d].classList.replace("dots-active", "dots-inactive");
           }
         }
-        arr[currentSlide].classList.remove("inactive");
+        arr[currentSlide].classList.replace("dots-inactive", "dots-active")
 
         removeAnimation(time, elm, title, bodyText)
         removeCrew(title, bodyText, time);
@@ -731,12 +731,12 @@ function swipe(elm, title, bodyText, time, arr) {
         } else {
           currentSlide = 3
         }
-        for (c in arr) {
-          if (!arr[c].classList.contains("inactive")) {
-            arr[c].classList.add("inactive");
+        for (d in arr) {
+          if (arr[d].classList.contains("dots-active")) {
+            arr[d].classList.replace("dots-active", "dots-inactive");
           }
         }
-        arr[currentSlide].classList.remove("inactive");
+        arr[currentSlide].classList.replace("dots-inactive", "dots-active")
 
         removeAnimation(time, elm, title, bodyText)
         removeCrew(title, bodyText, time);
