@@ -1,3 +1,4 @@
+const logo = document.querySelector(".navbar-logo")
 const menuBtn = document.querySelector(".navbar-menu");
 const closeBtn = document.querySelector(".navpanel-close");
 const navpanel = document.querySelector(".navpanel");
@@ -9,14 +10,25 @@ const destination = document.querySelector(".navpanel-text-destination");
 const crew = document.querySelector(".navpanel-text-crew");
 const technology = document.querySelector(".navpanel-text-technology");
 
-var bodyText = "";
-bodyText = dynamicArea.innerHTML;
+const bodyText = dynamicArea.innerHTML;
 const size = window.matchMedia("(min-width: 64em)")
 let currentPage = "home";
 let currentSlide = 0
 
 const btns = [home, destination, crew, technology]
 
+function logoBtn() {
+  logo.addEventListener('click', ()=> {
+    dynamicArea.innerHTML = bodyText;
+    body.className = "";
+    body.classList.add("bg-home");
+    panelItems('btn-state')
+    home.classList.add('state-active')
+    currentPage = "home";
+  })
+}
+
+logoBtn()
 function panelItems(type) {
   switch (type) {
     case 'none':
@@ -100,11 +112,9 @@ function panel() {
     dynamicArea.innerHTML = bodyText;
     body.className = "";
     body.classList.add("bg-home");
-    dynamicArea.style.position = "relative"
-    dynamicArea.style.bottom = "auto"
     panelItems('m-close')
     panelItems('btn-state')
-    setTimeout(home.classList.add('state-active'), 100)
+    home.classList.add('state-active')
     currentPage = "home";
   });
 
@@ -113,7 +123,7 @@ function panel() {
     destinationArea();
     panelItems('m-close')
     panelItems('btn-state')
-    setTimeout(destination.classList.add('state-active'), 100)
+    destination.classList.add('state-active')
   });
 
   crew.addEventListener("click", (e) => {
@@ -121,7 +131,7 @@ function panel() {
     crewArea()
     panelItems('m-close')
     panelItems('btn-state')
-    setTimeout(crew.classList.add('state-active'), 100)
+    crew.classList.add('state-active')
   });
 
   technology.addEventListener("click", (e) => {
@@ -129,7 +139,7 @@ function panel() {
     techArea();
     panelItems('m-close')
     panelItems('btn-state')
-    setTimeout(technology.classList.add('state-active'), 100)
+    technology.classList.add('state-active')
   });
 }
 
@@ -628,11 +638,8 @@ function buttonHandle(
           }
         }
         btn.classList.replace("btnoff", "btnon")
-        removeAnimation(time, image, title, bodyText)
         removeTech(title, bodyText)
         loadData("tech", image, title, bodyText, km, time, i)
-        addAnimation(time, image, title, bodyText)
-        setTimeout(() => { removeCls(time, image, title, bodyText) }, 400)
         break
     }
   });
